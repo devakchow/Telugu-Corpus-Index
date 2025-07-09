@@ -1,93 +1,220 @@
-# Telugu AI Data Visualization App
+# Telugu Corpus Data Visualizer 
 
-
-
-## Getting started
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://code.swecha.org/K.Rishitha/telugu-ai-data-visualization-app.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://code.swecha.org/K.Rishitha/telugu-ai-data-visualization-app/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
+A comprehensive Streamlit-based web application for visualizing and analyzing Telugu literature corpus data with advanced filtering, search capabilities, and interactive data exploration tools.
 
 ## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+The Telugu Corpus Data Visualizer is a powerful analytics tool designed specifically for researchers, linguists, and enthusiasts working with Telugu literature datasets. This application provides an intuitive interface to explore large collections of Telugu literary works, offering insights through interactive visualizations, advanced filtering options, and detailed data analysis capabilities.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+### Key Features
+
+- **Interactive Data Visualization**: Time series analysis, distribution charts, and detailed analytics with Plotly
+- **Advanced Filtering System**: Multi-level filtering by type, author, publisher, magazine, status, and date ranges
+- **Optimized Search**: Cross-field search functionality across titles, authors, types, publishers, and magazines
+- **Telugu Text Support**: Optimized rendering for Telugu scripts with proper font support
+- **Interactive Data Grid**: Sortable, filterable, and selectable data table with AgGrid integration
+
+### What Makes This Different
+
+- **Telugu-Specific Optimization**: Specially designed for Telugu literature corpus with proper Unicode support
+- **Publication Timeline Analysis**: Comprehensive time-based analysis including yearly, monthly, and decade trends
+- **Author Productivity Analytics**: Detailed insights into prolific authors and their publication patterns
+- **Status Tracking**: Monitor active vs. inactive publications in your corpus
 
 ## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+
+### Prerequisites
+
+- Python 3.7 or higher
+- pip package manager
+
+### Required Dependencies
+
+```bash
+pip install streamlit pandas st-aggrid numpy plotly
+```
+
+### Step-by-Step Installation
+
+1. **Clone or download the project files**
+   ```bash
+   # If using git
+   git clone <repository-url>
+   cd telugu-corpus-visualizer
+   
+   # Or download and extract the files to your preferred directory
+   ```
+
+2. **Install required packages**
+   ```bash
+   pip install -r requirements.txt
+   ```
+   
+   Or install individually:
+   ```bash
+   pip install streamlit==1.28.0
+   pip install pandas==2.0.3
+   pip install st-aggrid==0.3.4
+   pip install numpy==1.24.3
+   pip install plotly==5.15.0
+   ```
+
+3. **Prepare your data file**
+   - Place your Telugu corpus CSV file in the same directory as the application
+   - Rename it to `sorted_data[1].csv` or use the upload feature avaiable directly upon running the streamlit app
 
 ## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+### Starting the Application
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+```bash
+streamlit run app.py
+```
+
+The application will automatically open in your default web browser at `http://localhost:8501`
+
+### Data Source Options
+
+**Option 1: Use Existing Data**
+- Place your CSV file as `sorted_data[1].csv` in the application directory
+- Select "Use Existing Telugu Corpus data" in the interface
+
+**Option 2: Upload Data direclty on the App**
+- Select "Upload your own CSV file"
+- Use the file uploader to select your Telugu corpus CSV file
+
+### Expected CSV Format
+
+Your CSV file should contain the following columns:
+
+| Column | Description | Example |
+|--------|-------------|---------|
+| ID | Unique identifier | 1, 2, 3... |
+| Title | Title of the work | "రామాయణం", "మహాభారతం" |
+| Type | Content type | "కథ", "కవిత", "నవల" |
+| Author | Author name | "విశ్వనాథ సత్యనారాయణ" |
+| Publisher | Publisher name | "వాణీ ప్రకాశన్" |
+| Magazine | Magazine name | "ఆంధ్రజ్యోతి" |
+| Published date | Publication date | YYYY-MM-DD format |
+| Vol | Volume information | Can be empty |
+| Link | Document URL | Web link to document |
+| STATUS | Active status | True/False |
+
+### Feature Walkthrough
+
+1. **Data Overview**: View basic statistics including total records, unique authors, publishers, and active status count
+
+2. **Filtering Options** (Sidebar):
+   - Filter by content type (కథ, కవిత, etc.)
+   - Select specific authors (top 50 most frequent)
+   - Filter by publisher or magazine
+   - Choose active/inactive status
+   - Set year range for publications
+
+3. **Search Functionality**:
+   - Enter search terms in the search box
+   - Searches across Title, Author, Type, Publisher, and Magazine fields
+   - Case-insensitive search with accurate results
+
+4. **Data Visualizations**:
+   - **Time Series Analysis**: Publications by year and decade
+   - **Distribution Charts**: Content type and publisher distribution
+   - **Detailed Analytics**: Top authors and monthly trends
+
+5. **Interactive Data Table**:
+   - Sort columns by clicking headers
+   - Use column filters for precise data selection
+   - Select multiple rows for detailed view
+   - Resize columns and customize layout
+
+### Example Usage Scenarios
+
+**Scenario 1: Analyzing Author Productivity**
+```
+1. Go to "Detailed Analytics" tab
+2. View "Top 15 Most Prolific Authors" chart
+3. Filter by specific author using sidebar
+4. Analyze their publication timeline
+```
+
+**Scenario 2: Publisher Market Analysis**
+```
+1. Navigate to "Distribution Charts" tab
+2. View "Distribution by Publisher" pie chart
+3. Filter by specific publisher
+4. Analyze their publication types and timeline
+```
+
+**Scenario 3: Historical Publication Trends**
+```
+1. Use year range slider in sidebar
+2. View "Publications by Year" in Time Series Analysis
+3. Analyze trends across different decades
+4. Compare with monthly publication trends
+```
 
 ## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+We welcome contributions from the community! Here's how you can help:
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+### Development Setup
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+1. Fork the repository
+2. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Make your changes
+5. Test thoroughly with sample data
+6. Submit a pull request
 
-## License
-For open source projects, say how it is licensed.
+### Contribution Guidelines
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+- Follow Python PEP 8 style guidelines
+- Add comments for complex logic
+- Test with various data sizes and formats
+- Update documentation for new features
+- Ensure Telugu text rendering works correctly
+
+### Areas for Contribution
+
+- **Bug Fixes**: Report and fix any issues found
+- **New Visualizations**: Add more chart types and analytics
+- **Performance Improvements**: Optimize for larger datasets
+- **UI/UX Enhancements**: Improve user experience
+- **Documentation**: Improve README, add code comments
+- **Testing**: Add unit tests and integration tests
+
+## Authors and Acknowledgment
+
+**Built for Viswam.ai**
+
+by Devak & Rishitha
+
+## Special Thanks
+We would like to extend our heartfelt gratitude to @ranjithraj, our mentor, for his invaluable guidance and support throughout the development of this project
+
+### Recent Updates
+- Enhanced Telugu text rendering
+- Improved filtering performance
+- Added comprehensive data visualizations
+- Optimized for larger datasets
+
+### Getting Involved
+
+We're always looking for contributors! Whether you're interested in:
+- Adding new features
+- Improving documentation
+- Testing with different datasets
+- Providing feedback
+
+Feel free to reach out or submit pull requests. This project thrives on community involvement and feedback from Telugu literature researchers and enthusiasts.
+
+---
+
+**Happy Analyzing!**
