@@ -516,5 +516,30 @@ else:
 
 # Footer
 st.markdown("---")
-st.markdown("**Built for Viswam.ai** by Devak & Rishitha.**")
+
+st.markdown("**Built for Viswam.ai** by Devak & Rishitha")
 st.info("The Data was inherited from Kathanilayam Database for Non-profit purposes.")
+
+# Feedback button with blue-to-black gradient (matching header, always visible)
+st.markdown("""
+<div style='text-align: center; padding: 30px 0 10px 0;'>
+<a href='https://docs.google.com/forms/d/e/1FAIpQLSeJrJ47EjFJI7t6NALmrRaDSxJJszagApAt14-89OVjJ9mxcw/viewform?usp=header' target='_blank'>
+    <button style='
+        background: linear-gradient(90deg, #1F51FF 0%, #000000 100%);
+        color: #fff;
+        padding: 18px 40px;
+        font-size: 22px;
+        font-weight: bold;
+        border: 2px solid #1F51FF;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 0 16px 4px #1F51FF88, 0 4px 12px rgba(31,81,255,0.15);
+        transition: transform 0.2s, box-shadow 0.2s;
+        outline: none;
+    ' onmouseover="this.style.transform='scale(1.07)';this.style.boxShadow='0 0 32px 8px #1F51FFCC, 0 4px 12px rgba(31,81,255,0.15)';"
+      onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 0 16px 4px #1F51FF88, 0 4px 12px rgba(31,81,255,0.15)';">
+        Give Feedback <span style="color:#ff3333;">❤️</span>
+    </button>
+</a>
+</div>
+""", unsafe_allow_html=True)
