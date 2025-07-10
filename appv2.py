@@ -516,4 +516,5 @@ else:
 
 # Footer
 st.markdown("---")
-st.markdown("**Built for Viswam.ai** by Devak & Rishitha")
+st.markdown("**Built for Viswam.ai** by Devak & Rishitha.**")
+st.info("The Data was inherited from Kathanilayam Database for Non-profit purposes.")
