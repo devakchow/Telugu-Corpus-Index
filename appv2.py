@@ -62,7 +62,7 @@ st.markdown("""
 # Centered Header with Gradient Styling
 st.markdown("""
 <div class="main-header" style="text-align: center;">
-    <h1>తెలుగు Corpus Data Visualizer</h1>
+    <h1>తెలుగు Books Catalog Dashboard</h1>
 </div>
 """, unsafe_allow_html=True)
 
